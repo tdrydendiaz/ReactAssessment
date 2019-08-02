@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 
 
+
 class Login extends Component {
     constructor() {
         super();
@@ -14,9 +15,7 @@ class Login extends Component {
     }
     makeRequest = (e) => {
         e.preventDefault();
-
-        // console.log(e.target[0].value)
-
+        console.log(e.target[0].value)
         let newItem = {
             username: e.target[0].value,
             password: e.target[1].value,
@@ -24,14 +23,17 @@ class Login extends Component {
         }
 
         axios
-            .get("http://localhost:5000/user/name/:username", newItem)
+            .get("http://localhost:5000/user/name/" + newItem.username + "/" +  newItem.password)
 
             .then(response => {
-                this.setState({ message:  JSON.stringify(response.data.Status) });
-                console.log(response);
-                });
+                this.setState({
+                    data: response.data
+                })
+                this.setState({ message: JSON.stringify(response.data.Status) });
+                console.log(response.data);
+            });
 
-                this.props.getAll();       
+        this.props.getAll();
     };
 
     render() {
@@ -47,9 +49,7 @@ class Login extends Component {
 
                     <input type="submit" class="btn btn-primary" value="Register" />
                 </form>
-                <p>
-                    {this.state.message}
-                </p>
+                <p> {this.state.message}</p>
             </div>
         );
     }

@@ -62,7 +62,7 @@ class Register extends Component {
                     <input name="image" type="text" id="accEmail" class="form-control"  />
                     <br />
 
-                    <input type="submit" class="btn btn-primary" value="Register" />
+                    <input name="clickme" type="submit" class="btn btn-primary" value="Register" />
                 </form>
                
             </div>
