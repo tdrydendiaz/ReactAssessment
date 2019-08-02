@@ -28,15 +28,18 @@ export default class NavigationBar extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Recipes ^_^</NavbarBrand>
+          <NavbarBrand href="/">User Login and Reg Site</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/">Home</NavLink>
+                <NavLink href="/">Usernames</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/AddRecipe">New Recipe</NavLink>
+                <NavLink href="/Register">Register</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/Register">Login</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
