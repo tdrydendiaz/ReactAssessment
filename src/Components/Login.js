@@ -7,7 +7,7 @@ class Login extends Component {
         super();
         this.state = {
             username: "",
-            password: ""
+            password: ""            
         };
 
     }
@@ -23,7 +23,7 @@ class Login extends Component {
         }
 
         axios
-            .post("http://localhost:5000/user/name/:username", newItem)
+            .get("http://localhost:5000/user/name/:username", newItem)
 
             .then(response => {
 
@@ -52,6 +52,9 @@ class Login extends Component {
 
                     <input type="submit" class="btn btn-primary" value="Register" />
                 </form>
+                <p>
+                    {this.state.message}
+                </p>
             </div>
         );
     }
