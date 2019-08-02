@@ -1,11 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import axios from "axios";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 import './App.css';
 import NavigationBar from './Components/NavigationBar'
 import UserThread from './Components/UserThread'
+import Register from './Components/Register'
+import Login from './Components/Login'
 
 
 export default class App extends React.Component {
@@ -35,8 +37,15 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-     <NavigationBar />
-      {/* <UserThread />  */}
+        <Router>
+          <NavigationBar />
+          {/* <UserThread />  */}
+          <Route exact path="/" render={() => <UserThread getAll={this.onLoad} data={this.state.data} />} />
+
+          <Route exact path="/Register" render={() => <Register getAll={this.onLoad} data={this.state.data} />} />
+          <Route exact path="/Login" render={() => <Login getAll={this.onLoad} data={this.state.data} />} />
+     
+        </Router>
       </div>
     );
   }

@@ -39,7 +39,7 @@ export default class NavigationBar extends Component {
                 <NavLink href="/Register">Register</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/Register">Login</NavLink>
+                <NavLink href="/Login">Login</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
