@@ -52,7 +52,7 @@ class Register extends Component {
                     <input name="name" type="text" id="accUsername" class="form-control"  />
                     <br />
                     <label for="accEmail" id="accEmailLable">Email: </label>
-                    <input name="desc" type="text" id="accEmail" class="form-control"  />
+                    <input name="url" type="text" id="accEmail" class="form-control"  />
                     <br />
                     <label for="accContent" id="accContentLable">Password: </label>
                     <input name="ingreds"  type="text" id="accContent" class="form-control" />
@@ -64,6 +64,7 @@ class Register extends Component {
 
                     <input type="submit" class="btn btn-primary" value="Register" />
                 </form>
+               
             </div>
         );
     }
