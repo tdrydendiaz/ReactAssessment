@@ -39,12 +39,12 @@ export default class App extends React.Component {
       <div className="App">
         <Router>
           <NavigationBar />
-          {/* <UserThread />  */}
+
           <Route exact path="/" render={() => <UserThread getAll={this.onLoad} data={this.state.data} />} />
 
           <Route exact path="/Register" render={() => <Register getAll={this.onLoad} data={this.state.data} />} />
           <Route exact path="/Login" render={() => <Login getAll={this.onLoad} data={this.state.data} />} />
-     
+
         </Router>
       </div>
     );
