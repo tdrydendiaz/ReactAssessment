@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from "axios";
+import axios from "axios";
 
 
 class Login extends Component {
@@ -7,13 +7,37 @@ class Login extends Component {
         super();
         this.state = {
             username: "",
-            email: "",
-            password: "",
-            password2: ""
+            password: ""
         };
 
     }
+  makeRequest = (e) => {
+        e.preventDefault();
 
+        console.log(e.target[0].value)
+
+        let newItem = {
+            username: e.target[0].value,
+            password: e.target[1].value,
+            
+        }
+
+        axios
+            .post("http://localhost:5000/user/name/:username", newItem)
+
+            .then(response => {
+
+
+                this.setState({
+                    data: response.data
+                });
+
+                this.props.getAll();
+
+
+
+            });
+    };
 
     render() {
         return (
